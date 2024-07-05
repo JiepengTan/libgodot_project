@@ -80,7 +80,7 @@ public:
             fprintf(stderr, "Error opening libgodot: %lu\n", GetLastError());
             return;
         }
-        func_libgodot_create_godot_instance = (void *(*)(int, char **, GDExtensionInitializationFunction, void *))GetProcAddress(handle, "gdextension_create_godot_instance");
+        func_libgodot_create_godot_instance = (GDExtensionObjectPtr (*)(int, char *[], GDExtensionInitializationFunction, void *))GetProcAddress(handle, "libgodot_create_godot_instance");
         if (func_libgodot_create_godot_instance == NULL) {
             fprintf(stderr, "Error acquiring function: %lu\n", GetLastError());
             FreeLibrary(handle);

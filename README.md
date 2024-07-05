@@ -110,7 +110,7 @@ This class is made accessible over the GDExtension API. This class can be used t
 To actually create a Godot instance a new symbol is added to the GDExtension API:
 
 ```cpp
-GDExtensionObjectPtr gdextension_create_godot_instance(int p_argc, char *p_argv[], GDExtensionInitializationFunction p_init_func);
+GDExtensionObjectPtr libgodot_create_godot_instance(int p_argc, char *p_argv[], GDExtensionInitializationFunction p_init_func, void *p_platform_data);
 ```
 
 This function can be used to create a new Godot instance and return a GodotInstance object reference to control it. Both samples show how easy it is to bind this function and then use the generated GDExtension API bindings with the returned GodotInstance object.
